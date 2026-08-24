@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+  <html lang="es">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bike Shack — Venta y mecánica de bicicletas en San Juan, Puerto Rico</title>
+  <meta name="description" content="Bike Shack: tienda y taller de bicicletas en San Juan, Puerto Rico desde el 2010. Venta de bicis de monte y ruta, mecánica experta, delivery y pickup. Mar–Sáb 10AM–6PM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+  :root{
+  --negro:#0A0A0A;
+--blanco:#FFFFFF;
+  --rojo:#E31E24;
+  --cromo:#9CA0A6;
+--humo:#F6F6F4;
+  --borde:#EAEAE7;
+  }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+  body{font-family:'Archivo',sans-serif;background:var(--blanco);color:var(--negro);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+h1,h2,h3,.btn{font-family:'Archivo Black',sans-serif;text-transform:uppercase;line-height:1}
+a{color:inherit}
+  iconify-icon{display:inline-block;vertical-align:-0.15em}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--borde)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--negro);text-decoration:none}
+.brand img{height:32px}
+.brand span{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:17px;letter-spacing:.01em}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{position:relative;color:var(--negro);text-decoration:none;font-weight:700;text-transform:uppercase;font-size:12.5px;letter-spacing:.13em;padding:10px 16px;transition:color .15s}
+.nav-links a::after{content:'';position:absolute;left:16px;right:16px;bottom:6px;height:2px;background:var(--rojo);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+  .nav-links a:hover{color:var(--rojo)}
+  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-call{display:inline-flex;align-items:center;gap:8px;background:var(--negro);color:var(--blanco);text-decoration:none;font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:.08em;padding:11px 18px;border-radius:999px;transition:background .15s}
+.nav-call:hover{background:var(--rojo)}
+
+/* ---------- HERO ---------- */
+.hero{padding:76px 0 90px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--rojo);font-weight:800;font-size:12px;letter-spacing:.24em;text-transform:uppercase;margin-bottom:20px}
+.eyebrow .ln{width:26px;height:2px;background:var(--rojo)}
+.hero h1{font-size:clamp(46px,6.4vw,80px);letter-spacing:-.01em;margin-bottom:22px}
+.hero h1 em{color:var(--rojo);font-style:normal}
+.hero p.lead{color:#4a4a4a;max-width:46ch;font-size:17.5px;margin-bottom:34px}
+.stats{display:flex;gap:0;margin-bottom:38px;flex-wrap:wrap}
+.stat{padding-right:28px;margin-right:28px;border-right:1px solid var(--borde)}
+.stat:last-child{border-right:none}
+  .stat b{font-family:'Archivo Black',sans-serif;font-size:27px;display:block}
+  .stat b em{color:var(--rojo);font-style:normal}
+.stat small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cromo);font-weight:700}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:13.5px;letter-spacing:.06em;padding:16px 26px;border-radius:999px;transition:all .18s}
+.btn-negro{background:var(--negro);color:var(--blanco)}
+.btn-negro:hover{background:var(--rojo)}
+.btn-linea{border:2px solid var(--negro);color:var(--negro)}
+.btn-linea:hover{border-color:var(--rojo);color:var(--rojo)}
+.abierto{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12.5px;color:#2e8b4f;margin-bottom:22px;background:#EFF9F1;padding:7px 14px;border-radius:999px}
+.abierto .dot{width:8px;height:8px;border-radius:50%;background:#2ecc71}
+
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-visual img{width:62%;max-width:320px}
+
+/* ---------- SECCIONES ---------- */
+section{padding:96px 0}
+.sec-head{margin-bottom:52px;max-width:60ch}
+.sec-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.01em;margin-top:6px}
+.sec-head p{color:#555;font-size:15.5px;margin-top:14px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+
+/* SERVICIOS */
+.serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px}
+.serv{background:var(--blanco);border:1px solid var(--borde);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.serv:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,10,10,.09);border-color:transparent}
+.serv .icono{width:56px;height:56px;border-radius:14px;background:var(--negro);color:var(--blanco);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px}
+.serv.destacado{border-top:4px solid var(--rojo)}
+.serv.destacado .icono{background:var(--rojo)}
+.serv h3{font-size:17px;margin-bottom:10px;letter-spacing:0}
+.serv p{font-size:14.5px;color:#555;flex:1}
+.serv ul{list-style:none;margin-top:16px;border-top:1px solid var(--borde);padding-top:16px}
+.serv li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:5px 0;color:#333}
+.serv li iconify-icon{color:var(--rojo);flex:none;font-size:15px;margin-top:3px}
+.extras{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.chip-x{display:inline-flex;align-items:center;gap:9px;background:var(--humo);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:11px 18px;border-radius:999px;color:#333}
+.chip-x iconify-icon{font-size:17px;color:var(--rojo)}
+
+/* NOSOTROS */
+.nos{background:var(--humo)}
+.nos-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.nos p.lead{font-size:clamp(21px,2.6vw,28px);font-family:'Archivo Black',sans-serif;text-transform:uppercase;line-height:1.28;margin-bottom:22px;letter-spacing:-.01em}
+.nos p.lead em{color:var(--rojo);font-style:normal}
+.nos p.body{color:#444;font-size:15.5px;margin-bottom:16px;max-width:52ch}
+.resena{background:var(--blanco);border:1px solid var(--borde);border-radius:16px;padding:24px;margin-top:28px;border-left:4px solid var(--rojo)}
+.resena .estrellas{color:#FFB800;letter-spacing:3px;font-size:15px}
+.resena p{font-weight:600;font-size:15px;margin:10px 0 4px;color:var(--negro)}
+.resena small{color:var(--cromo);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.anos{text-align:center;background:var(--blanco);border:1px solid var(--borde);border-radius:24px;padding:50px 20px}
+.anos .cifra{font-family:'Archivo Black',sans-serif;font-size:clamp(80px,12vw,130px);line-height:1;color:transparent;-webkit-text-stroke:3px var(--negro)}
+.anos .lbl{font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:13px;margin-top:6px}
+.anos .sub{color:var(--cromo);font-size:12.5px;margin-top:8px}
+
+/* VALORES (Sobre nosotros) */
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.val{background:var(--blanco);border:1px solid var(--borde);border-radius:20px;padding:28px 24px;transition:transform .2s,box-shadow .2s,border-color .2s}
+.val:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(10,10,10,.09);border-color:transparent}
+.val .icono{width:50px;height:50px;border-radius:13px;background:var(--humo);color:var(--rojo);display:flex;align-items:center;justify-content:center;font-size:23px;margin-bottom:18px}
+.val h3{font-size:15px;margin-bottom:9px;letter-spacing:0}
+.val p{font-size:13.5px;color:#555}
+
+/* CONTACTO */
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.con-card{background:var(--blanco);border:1px solid var(--borde);border-radius:20px;padding:30px}
+.con-card h3{display:flex;align-items:center;gap:10px;font-size:14.5px;letter-spacing:.02em;margin-bottom:14px}
+.con-card h3 .ic{width:34px;height:34px;border-radius:10px;background:var(--humo);color:var(--rojo);display:flex;align-items:center;justify-content:center;font-size:17px}
+.con-card p,.con-card li{font-size:15px}
+  .con-card a.link{font-weight:700;text-decoration:none;border-bottom:2px solid var(--rojo);padding-bottom:1px}
+.horario{list-style:none;width:100%}
+  .horario li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borde);font-size:14.5px}
+.horario li:last-child{border-bottom:none}
+.horario .cerrado{color:var(--rojo);font-weight:700}
+.con-full{grid-column:1/-1;background:var(--negro);border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:32px}
+.con-full p{font-size:16px;color:var(--blanco);font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.con-full .btn-negro{background:var(--rojo)}
+  .con-full .btn-negro:hover{background:var(--blanco);color:var(--negro)}
+
+footer{background:var(--blanco);border-top:1px solid var(--borde);padding:36px 0}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--cromo)}
+footer img{height:26px;opacity:.6}
+
+@media(max-width:860px){
+.nav-links{display:none}
+.hero .wrap,.nos-grid{grid-template-columns:1fr}
+.hero-visual{max-width:340px;margin:40px auto 0}
+.serv-grid,.con-grid{grid-template-columns:1fr}
+.val-grid{grid-template-columns:1fr 1fr}
+  }
+@media(max-width:560px){
+.val-grid{grid-template-columns:1fr}
+}
+</style>
+  </head>
+  <body>
+
+  <nav>
+  <div class="wrap">
+  <a class="brand" href="#inicio"><img src="/logo.png" alt="Bike Shack"><span>Bike Shack</span></a>
+  <ul class="nav-links">
+  <li><a href="#servicios">Servicios</a></li>
+  <li><a href="#nosotros">Nosotros</a></li>
+  <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a class="nav-call" href="tel:+17872872625"><iconify-icon icon="solar:phone-calling-bold"></iconify-icon> 787-287-2625</a>
+  </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+  <div class="wrap">
+  <div>
+  <div class="abierto"><span class="dot"></span> Abierto Mar–Sáb · 10AM–6PM</div>
+  <div class="eyebrow"><span class="ln"></span>San Juan · Puerto Rico · Desde 2010</div>
+  <h1>Tu bici, lista para <em>la calle</em></h1>
+  <p class="lead">Venta y mecánica de bicicletas. Bicis de monte y ruta, piezas, accesorios y un taller con mecánicos que saben lo que hacen.</p>
+  <div class="stats">
+  <div class="stat"><b>4.7 <em>★</em></b><small>85 reseñas</small></div>
+  <div class="stat"><b>15+</b><small>Años de taller</small></div>
+<div class="stat"><b>2010</b><small>Establecidos</small></div>
+</div>
+<div class="btn-row">
+<a class="btn btn-negro" href="#servicios">Ver servicios</a>
+  <a class="btn btn-linea" href="https://maps.app.goo.gl/3XRdVHbWtjj3Lt8A7" target="_blank" rel="noopener">Cómo llegar</a>
+</div>
+</div>
+<div class="hero-visual">
+<img src="/logo.png" alt="Logo Bike Shack">
+  </div>
+  </div>
+  </header>
+
+  <section id="servicios">
+  <div class="wrap">
+  <div class="sec-head">
+  <div class="eyebrow"><span class="ln"></span>Servicios</div>
+  <h2>Todo lo que tu bici necesita</h2>
+  <p>Del tune-up rápido a la bici nueva — aquí resolvemos.</p>
+</div>
+<div class="serv-grid">
+<div class="serv destacado">
+<div class="icono"><iconify-icon icon="solar:settings-bold"></iconify-icon></div>
+<h3>Mecánica experta</h3>
+<p>El taller es el corazón de Bike Shack. Diagnóstico honesto y reparaciones rápidas — la mayoría el mismo día.</p>
+  <ul>
+  <li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Tune-up completo</span></li>
+  <li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Frenos y cambios</span></li>
+<li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Cadena, cassette y ponches</span></li>
+<li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Servicio en tienda (onsite)</span></li>
+</ul>
+</div>
+  <div class="serv">
+  <div class="icono"><iconify-icon icon="solar:bicycling-bold"></iconify-icon></div>
+  <h3>Venta de bicicletas</h3>
+<p>Bicis de monte y ruta para todos los niveles, desde tu primera bici hasta tu próxima upgrade.</p>
+<ul>
+<li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Monte (MTB) y ruta</span></li>
+<li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Bicis para niños</span></li>
+<li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Piezas y accesorios</span></li>
+  <li><iconify-icon icon="solar:bolt-bold"></iconify-icon><span>Ropa y cascos</span></li>
+</ul>
+</div>
+  </div>
+  <div class="extras">
+  <span class="chip-x"><iconify-icon icon="solar:accessibility-bold"></iconify-icon>Acceso silla de ruedas</span>
+  <span class="chip-x"><iconify-icon icon="solar:card-bold"></iconify-icon>Crédito · Débito · ATH Móvil / NFC</span>
+<span class="chip-x"><iconify-icon icon="solar:bolt-bold"></iconify-icon>Visita rápida</span>
+</div>
+</div>
+</section>
+
+<section class="nos" id="nosotros">
+<div class="wrap">
+<div class="nos-grid">
+<div>
+<div class="eyebrow"><span class="ln"></span>Nosotros</div>
+<p class="lead">Desde el 2010 mantenemos a Puerto Rico <em>rodando</em>.</p>
+<p class="body">Bike Shack empezó gracias a todos ustedes y hoy es punto de encuentro de la comunidad ciclista: los que bajan monte, los que suben ruta y los que usan la bici todos los días.</p>
+  <p class="body">Lo que no ha cambiado: mecánicos honestos, trabajo bien hecho y trato directo. Te decimos qué tiene tu bici, cuánto cuesta y cuándo está lista — sin sorpresas.</p>
+  <div class="resena">
+  <div class="estrellas">★★★★★</div>
+  <p>"Excelente calidad de servicio y atención al público. Best bike shop in PR."</p>
+  <small>Reseña en Google</small>
+</div>
+</div>
+<div class="anos">
+<div class="cifra">15+</div>
+<div class="lbl">Años de taller</div>
+<div class="sub">4.7★ · 85 reseñas en Google</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="valores">
+<div class="wrap">
+<div class="sec-head center">
+<div class="eyebrow" style="justify-content:center"><span class="ln"></span>Sobre nosotros<span class="ln"></span></div>
+<h2>Somos gente de bici.</h2>
+  <p style="max-width:56ch;margin-left:auto;margin-right:auto">Detrás de Bike Shack hay mecánicos que montan, compiten y viven la bici. Por eso entendemos lo que necesitas: no vendemos por vender, resolvemos para que sigas rodando. Estos son los principios que no negociamos.</p>
+</div>
+<div class="val-grid">
+  <div class="val">
+  <div class="icono"><iconify-icon icon="solar:medal-ribbon-star-bold"></iconify-icon></div>
+  <h3>Trabajo bien hecho</h3>
+<p>Cada bici sale del taller como si fuera nuestra. Sin atajos ni piezas de relleno.</p>
+  </div>
+  <div class="val">
+  <div class="icono"><iconify-icon icon="solar:chat-square-check-bold"></iconify-icon></div>
+  <h3>Trato directo</h3>
+  <p>Te explicamos qué tiene tu bici, cuánto cuesta y por qué. Precios claros, sin letra chiquita.</p>
+</div>
+<div class="val">
+<div class="icono"><iconify-icon icon="solar:calendar-mark-bold"></iconify-icon></div>
+<h3>Cumplimos la fecha</h3>
+<p>Cuando decimos que está lista, está lista. Tu tiempo vale y lo respetamos.</p>
+  </div>
+  <div class="val">
+  <div class="icono"><iconify-icon icon="solar:users-group-rounded-bold"></iconify-icon></div>
+  <h3>Comunidad primero</h3>
+  <p>Rodamos, organizamos y apoyamos a la comunidad ciclista de la isla todos los días.</p>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <section id="contacto">
+  <div class="wrap">
+  <div class="sec-head">
+  <div class="eyebrow"><span class="ln"></span>Contacto</div>
+  <h2>Pásate por el taller</h2>
+</div>
+<div class="con-grid">
+<div class="con-card">
+<h3><span class="ic"><iconify-icon icon="solar:point-on-map-bold"></iconify-icon></span>Dónde estamos</h3>
+<p>431 Av. Escorial, Piso 1<br>San Juan, PR 00921</p>
+<p style="margin-top:14px"><a class="link" href="https://maps.app.goo.gl/3XRdVHbWtjj3Lt8A7" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+  <h3 style="margin-top:28px"><span class="ic"><iconify-icon icon="solar:phone-calling-bold"></iconify-icon></span>Llámanos</h3>
+  <p><a class="link" href="tel:+17872872625">787-287-2625</a></p>
+  <h3 style="margin-top:28px"><span class="ic"><iconify-icon icon="solar:camera-bold"></iconify-icon></span>Síguenos</h3>
+  <p><a class="link" href="https://instagram.com/bikeshackpr" target="_blank" rel="noopener">@bikeshackpr</a></p>
+  </div>
+  <div class="con-card">
+  <h3><span class="ic"><iconify-icon icon="solar:clock-circle-bold"></iconify-icon></span>Horario</h3>
+  <ul class="horario">
+  <li><span>Lunes</span><span class="cerrado">Cerrado</span></li>
+  <li><span>Martes</span><span>10:00 AM – 6:00 PM</span></li>
+  <li><span>Miércoles</span><span>10:00 AM – 6:00 PM</span></li>
+  <li><span>Jueves</span><span>10:00 AM – 6:00 PM</span></li>
+  <li><span>Viernes</span><span>10:00 AM – 6:00 PM</span></li>
+  <li><span>Sábado</span><span>10:00 AM – 6:00 PM</span></li>
+  <li><span>Domingo</span><span class="cerrado">Cerrado</span></li>
+  </ul>
+  </div>
+  <div class="con-full">
+  <p>¿La bici está dando problemas? Tráela sin cita.</p>
+<a class="btn btn-negro" href="tel:+17872872625">Llamar ahora</a>
+  </div>
+  </div>
+  </div>
+  </section>
+
+  <footer>
+  <div class="wrap">
+  <span>© 2026 Bike Shack · San Juan, Puerto Rico · Desde 2010</span>
+  <img src="/logo.png" alt="Bike Shack">
+  </div>
+  </footer>
+
+  <script src="https://code.iconify.design/iconify-icon/3.0.1/iconify-icon.min.js"></script>
+  </body>
+  </html>
